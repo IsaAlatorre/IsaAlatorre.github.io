@@ -1,0 +1,306 @@
+*, *::before, *::after 
+{ box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple:      #9333ea;
+  --purple-light: #ede9fe;
+  --purple-dark: #6b21a8;
+  --bg:          #faf5ff;
+  --white:       #ffffff;
+  --ink:         #1e1030;
+  --muted:       #6b7280;
+  --border:      #e9d5ff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  background: var(--purple-light);
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 16px rgba(145, 101, 179, 0.785);
+}
+
+.nav-brand {
+  font-family: 'Merriweather', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  padding: 1.1rem 0;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 1.1rem 1.4rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-links a:hover {
+  background: rgba(126, 69, 69, 0.782);
+  color: #fff;
+  border-bottom: 3px solid #fff;
+}
+
+.nav-links a.active {
+  border-bottom: 3px solid #fff;
+  color: #fff;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 100%);
+  color: #fff;
+  padding: 5rem 3rem 4.5rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.hero .subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* ── PAGE HEADER ── */
+.page-header {
+  background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 100%);
+  color: #fff;
+  padding: 3rem 3rem 3rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+}
+
+main {
+  flex: 1;
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2.5rem 4rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--purple-dark);
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--purple-dark);
+  margin: 1.2rem 0 0.3rem;
+}
+
+p { margin-bottom: 1rem; color: var(--ink); }
+
+ul { padding-left: 1.4rem; margin-bottom: 1rem; }
+ul li { margin-bottom: 0.35rem; color: var(--ink); }
+
+a {
+  color: var(--purple-dark);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--purple);
+  text-decoration: underline;
+}
+
+.card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1.6rem 2rem;
+  margin-bottom: 1.2rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 6px 24px rgba(147,51,234,0.12);
+  transform: translateY(-2px);
+}
+
+.card .meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--purple-light);
+  color: var(--purple-dark);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  margin: 0.2rem 0.2rem 0 0;
+  border: 1px solid var(--border);
+}
+
+.highlights {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.highlight-item {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-left: 4px solid var(--purple);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.highlight-item .hl-value {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--purple-dark);
+}
+
+.highlight-item .hl-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  background: var(--purple);
+  color: #fff;
+  border: 2px solid var(--purple);
+}
+
+.btn-primary:hover {
+  background: var(--purple-dark);
+  border-color: var(--purple-dark);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(147,51,234,0.3);
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.8rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.contact-list li:hover {
+  box-shadow: 0 4px 18px rgba(147,51,234,0.12);
+  transform: translateY(-2px);
+}
+
+.contact-list .ci-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+footer {
+  background: var(--purple-dark);
+  color: rgba(120, 92, 150, 0.8);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+footer a { color: #fff; font-weight: 600; }
+footer a:hover { text-decoration: underline; color: #fff; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  nav { padding: 0 1rem; }
+  .nav-brand { font-size: 1rem; }
+  .nav-links a { padding: 1rem 0.8rem; font-size: 0.75rem; }
+  .hero, .page-header { padding: 3rem 1.5rem; }
+  main { padding: 2rem 1.5rem 3rem; }
+  .highlights { flex-direction: column; }
+}
