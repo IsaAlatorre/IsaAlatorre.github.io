@@ -23,6 +23,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 nav {
@@ -80,7 +83,6 @@ nav {
   background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 100%);
   color: #fff;
   padding: 5rem 3rem 4.5rem;
-  text-align: center;
 }
 
 .hero h1 {
@@ -89,6 +91,7 @@ nav {
   font-weight: 700;
   margin-bottom: 0.8rem;
   line-height: 1.2;
+ 
 }
 
 .hero .subtitle {
@@ -96,29 +99,30 @@ nav {
   color: rgba(255,255,255,0.85);
   font-weight: 500;
   letter-spacing: 0.05em;
+  
 }
 
-/* ── PAGE HEADER ── */
 .page-header {
   background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 100%);
   color: #fff;
   padding: 3rem 3rem 3rem;
-  text-align: center;
+  
 }
 
 .page-header h1 {
   font-family: 'Merriweather', serif;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 700;
+  
 }
 
 main {
   flex: 1;
-  max-width: 860px;
   width: 100%;
   margin: 0 auto;
   padding: 3rem 2.5rem 4rem;
   animation: fadeUp 0.5s ease both;
+  
 }
 
 h2 {
@@ -129,6 +133,7 @@ h2 {
   margin: 2.5rem 0 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--border);
+  
 }
 
 h3 {
@@ -137,12 +142,18 @@ h3 {
   font-weight: 700;
   color: var(--purple-dark);
   margin: 1.2rem 0 0.3rem;
+  
 }
 
-p { margin-bottom: 1rem; color: var(--ink); }
+p { margin-bottom: 1rem; 
+  color: var(--ink); }
 
-ul { padding-left: 1.4rem; margin-bottom: 1rem; }
-ul li { margin-bottom: 0.35rem; color: var(--ink); }
+ul { display: table;
+  margin: 0 auto 1rem auto;
+  text-align: left;
+  padding-left: 1.4rem; }
+ul li { margin-bottom: 0.35rem; 
+  color: var(--ink); }
 
 a {
   color: var(--purple-dark);
